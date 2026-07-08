@@ -1,7 +1,7 @@
 # IAM Basics Lab - Solution
 
-**Student Name:** [Your Name]  
-**Date Completed:** [Date]
+**Student Name:** Julio Cesar Aldana Almanza  
+**Date Completed:** 07/08/2026
 
 ---
 
@@ -77,6 +77,7 @@
 ### Charlie's Access Tests:
 
 **Full Access:**
+![Charlie S3 Access](screenshots/charlie-s3-access.png)
 ![Charlie Full Access](screenshots/charlie-full-access.png)
 - S3 create bucket: ✅ SUCCESS
 - EC2 launch instance: ✅ SUCCESS
@@ -116,8 +117,8 @@
                 "s3:DeleteObject"
             ],
             "Resource": [
-                "arn:aws:s3:::dev-bucket",
-                "arn:aws:s3:::dev-bucket/*"
+                "arn:aws:s3:::dev-bucket-julio2026",
+                "arn:aws:s3:::dev-bucket-julio2026/*"
             ]
         }
     ]
@@ -138,9 +139,9 @@
 ![MFA Enabled](screenshots/mfa-enabled.png)
 
 **MFA Details:**
-- User: [alice / admin user]
+- User: alice
 - Device type: Virtual MFA
-- Authenticator app: [Google Authenticator / Microsoft Authenticator / Authy]
+- Authenticator app: Microsoft Authenticator
 - Status: ✅ Active
 
 ---
@@ -192,7 +193,7 @@ $ aws s3 ls --profile alice
 
 **Your Answer:**
 
-[Explain benefits: easier management, consistency, scalability, etc.]
+For some functions, it is required for many users to have the same policies, as their roles in the project are similar. That is why groups help to maintain permissions in a faster and easier way.
 
 ---
 
@@ -200,7 +201,7 @@ $ aws s3 ls --profile alice
 
 **Your Answer:**
 
-[Discuss: security risks, accidental changes, compliance issues, etc.]
+The possibility of unexpected changes in security aspects increase if you don't control admin access. 
 
 ---
 
@@ -208,7 +209,9 @@ $ aws s3 ls --profile alice
 
 **Your Answer:**
 
-[Propose structure: project-based groups, role-based access, tagging strategy, etc.]
+I would assign a role and register on which projects each developer is working on. 
+Then I would analyse the project, which features are needed and based on the roles I would create groups and assign the users to them. 
+Tags would also help to locate the users in their respective projects. 
 
 ---
 
@@ -216,7 +219,7 @@ $ aws s3 ls --profile alice
 
 **Your Answer:**
 
-[Explain: user deletion is permanent, permissions can be recreated but history lost, etc.]
+No, deletion of a user is permanent. The only alternative is to create a new one and assign the corresponding permissions. 
 
 ---
 
@@ -224,36 +227,36 @@ $ aws s3 ls --profile alice
 
 **What was most challenging about this lab?**
 
-[Your reflection]
+Create the new policy for the bucket created. 
 
 ---
 
 **What IAM best practice will you always follow?**
 
-[Your reflection]
+Change password frequently and store passwords in a safe place. 
 
 ---
 
 **How does IAM help implement the principle of least privilege?**
 
-[Your reflection]
+By assigning only the sufficient permissions to the users to avoid unexpected access and reduce security risks. 
 
 ---
 
 ## Checklist
 
-- [ ] All 3 users created (alice, bob, charlie)
-- [ ] Both groups created (Developers, DevOps)
-- [ ] Permissions tested for each user
-- [ ] Custom policy created and tested
-- [ ] MFA enabled for at least one user
-- [ ] All screenshots captured
-- [ ] All reflection questions answered
-- [ ] Policy JSON file saved
-- [ ] Work committed to Git
-- [ ] Pull request created
+- [X] All 3 users created (alice, bob, charlie)
+- [X] Both groups created (Developers, DevOps)
+- [X] Permissions tested for each user
+- [X] Custom policy created and tested
+- [X] MFA enabled for at least one user
+- [X] All screenshots captured
+- [X] All reflection questions answered
+- [X] Policy JSON file saved
+- [X] Work committed to Git
+- [X] Pull request created
 
 ---
 
-**Completed By:** [Your Name]  
-**Date:** [Date]
+**Completed By:** Julio Cesar Aldana Almanza  
+**Date:** 07/08/2026
